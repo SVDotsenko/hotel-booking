@@ -1,8 +1,8 @@
 import React from "react";
-import NavBar from "./components/navBar";
+import NavBar from "./components/navbar/navBar";
 import {Route, Switch} from "react-router-dom";
-import Entrance from "./components/entrance/entrance";
-import Registration from "./components/registration";
+import Entrance from "./components/login/entrance";
+import Registration from "./components/login/registration";
 
 function App() {
     return <>

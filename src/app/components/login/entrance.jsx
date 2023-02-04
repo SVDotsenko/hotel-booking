@@ -1,6 +1,7 @@
 import React from "react";
-import "./entrance.css"
-// https://getbootstrap.com/docs/5.1/forms/layout/
+import "./login.css"
+import {Link} from "react-router-dom";
+
 const Entrance = () => {
     return <>
         <div className="page">
@@ -16,7 +17,8 @@ const Entrance = () => {
                 </div>
 
                 <button type="submit" className="btn btn-primary w-100 mt-3">Войти</button>
-                <p className="text-center mt-2">Зарегистрироваться</p>
+
+                <Link to="/registration" className="nav-link text-center mt-2">Зарегистрироваться</Link>
             </div>
         </div>
     </>;

@@ -12,4 +12,3 @@ root.render(
         </React.StrictMode>
     </BrowserRouter>
 );
-// todo удалить папку .idea из гита
