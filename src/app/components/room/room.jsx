@@ -1,11 +1,11 @@
 import React from "react";
 import "./room.css"
 
-const Room = room => {
+const Room = ({roomNumber}) => {
     return <div className="rom">
         <div className="card mb-4 rounded-3 shadow-sm">
             <div className="card-header py-3">
-                <h4 className="my-0 fw-normal">1</h4>
+                <h4 className="my-0 fw-normal">{roomNumber}</h4>
             </div>
 
             <div className="card-body">
