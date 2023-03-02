@@ -1,0 +1,42 @@
+.room-container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.room {
+    display: flex;
+    width: 80%;
+    height: 90%;
+    background-color: lightyellow;
+    align-items: center;
+    /*justify-content: space-between;*/
+    /*justify-content: space-around;*/
+    /*justify-content: space-evenly;*/
+}
+
+.picture {
+    width: 400px;
+    height: 400px;
+    background-color: red;
+    position: relative;
+    margin-left: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.room-info {
+    /*margin-right: 200px;*/
+    margin: 0 auto;
+    /*background-color: aqua;*/
+    width: 700px;
+    text-align: center;
+}
+
+.book {
+    position: absolute;
+    bottom: 170px;
+    right: 200px;
+}

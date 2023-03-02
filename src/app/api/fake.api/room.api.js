@@ -89,14 +89,14 @@ const fetchAll = () =>
     new Promise((resolve) => {
         window.setTimeout(function () {
             resolve(rooms);
-        }, 2000);
+        }, 400);
     });
 
-const getById = (id) =>
-    new Promise((resolve) => {
+const getById = id =>
+    new Promise(resolve => {
         window.setTimeout(function () {
-            resolve(rooms.find((user) => user._id === id));
-        }, 1000);
+            resolve(rooms.find(room => room.roomNumber == id));
+        }, 500);
     });
 
 export default {

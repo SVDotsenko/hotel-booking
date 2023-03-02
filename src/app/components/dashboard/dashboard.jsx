@@ -10,7 +10,7 @@ const Dashboard = () => {
     }, []);
 
     return rooms ? <>
-        <h2 className="mt-1">Доступные номера</h2>
+        <h2 className="mt-1">Available rooms</h2>
         <div className="dashboard">
             <div className="rooms-container mt-3">
                 {rooms.map(room =>
