@@ -22,7 +22,9 @@ const Admin = () => {
             <h1>room status</h1>
         </div>
         <div className="container">
-            <div className="inner-container">
+            <div className="inner-container"
+                 data-toggle="tooltip"
+                 title="click the room to change booking status">
                 {rooms?.map(room =>
                     <div
                         key={room._id}

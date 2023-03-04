@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import "./navBar.css"
+import packageJson  from "../../../../package.json"
 
 const NavBar = () => {
     return (
@@ -19,6 +20,9 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
                 <Link to="/registration" className="nav-link">Registration</Link>
+            </li>
+            <li className="nav-item">
+                {packageJson.version}
             </li>
         </ul>
     );
