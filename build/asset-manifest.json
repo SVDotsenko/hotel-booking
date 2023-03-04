@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SVDotsenko/hotel-booking/static/css/main.9f858c9b.css",
+    "main.js": "/SVDotsenko/hotel-booking/static/js/main.0cedb30e.js",
+    "index.html": "/SVDotsenko/hotel-booking/index.html",
+    "main.9f858c9b.css.map": "/SVDotsenko/hotel-booking/static/css/main.9f858c9b.css.map",
+    "main.0cedb30e.js.map": "/SVDotsenko/hotel-booking/static/js/main.0cedb30e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9f858c9b.css",
+    "static/js/main.0cedb30e.js"
+  ]
+}
