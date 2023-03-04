@@ -9,10 +9,10 @@ function App() {
     return <>
         <NavBar/>
         <Switch>
-            <Redirect exact from="/" to="rooms"/>
+            <Redirect exact from="/" to="/rooms/available"/>
             <Route path="/entrance" component={Entrance}/>
             <Route path="/registration" component={Registration}/>
-            <Route path="/rooms/:roomID?" component={Rooms}/>
+            <Route path="/rooms/:book/:roomID?" component={Rooms}/>
         </Switch>
     </>;
 

@@ -7,7 +7,13 @@ const Details = ({roomID}) => {
 
     useEffect(() => {
         api.rooms.getById(roomID).then(data => setRoom(data));
-    }, []);
+    }, [roomID]);
+
+    const handleBookRoom = () => {
+        api.rooms.bookRoom(roomID).then(data => setRoom(data));
+    };
+
+    const buttonName = room?.booked ? "Cansel reservation" : "Book";
 
     return room ? <>
         <h2>Information about room</h2>
@@ -15,9 +21,13 @@ const Details = ({roomID}) => {
             <div className="room">
                 <div className="picture">foto</div>
                 <div>
-                    <div className="room-info">{room.name}</div>
+                    <div className="room-info">{room?.name}</div>
                     <div className="book">
-                        <button type="button" className="btn btn-lg btn-outline-primary">Book</button>
+                        <button
+                            type="button"
+                            className="btn btn-lg btn-outline-primary"
+                            onClick={handleBookRoom}
+                        >{buttonName}</button>
                     </div>
                 </div>
             </div>

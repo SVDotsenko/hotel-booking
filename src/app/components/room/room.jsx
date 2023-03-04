@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "./room.css"
-import {useHistory} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 
 const Room = ({roomNumber, name}) => {
     const [show, setShow] = useState(false);
@@ -15,8 +15,9 @@ const Room = ({roomNumber, name}) => {
 
     }, [show, roomNumber]);
 
+    const {pathname} = useLocation();
     const handleOpenRoom = () => {
-        history.push(`/rooms/${roomNumber}`);
+        history.push(`${pathname}/${roomNumber}`);
     }
 
     return show ? <div className="rom">

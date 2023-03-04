@@ -85,21 +85,43 @@ const rooms = [
     }
 ];
 
+if (!localStorage.getItem("rooms")) {
+    localStorage.setItem("rooms", JSON.stringify(rooms));
+}
+
 const fetchAll = () =>
     new Promise((resolve) => {
         window.setTimeout(function () {
-            resolve(rooms);
-        }, 400);
+            resolve(JSON.parse(localStorage.getItem("rooms")));
+        }, 1000);
     });
 
 const getById = id =>
     new Promise(resolve => {
         window.setTimeout(function () {
-            resolve(rooms.find(room => room.roomNumber == id));
+            resolve(JSON.parse(localStorage.getItem("rooms")).find(room => room.roomNumber == id));
         }, 500);
     });
 
+const update = (id, data) => new Promise(resolve => {
+    const rooms = JSON.parse(localStorage.getItem("rooms"));
+    const roomIndex = rooms.findIndex(r => r.roomNumber === id);
+    rooms[roomIndex] = {...rooms[roomIndex], ...data};
+    localStorage.setItem("users", JSON.stringify(rooms));
+    resolve(rooms[roomIndex]);
+});
+
+const bookRoom = roomID => new Promise(resolve => {
+    const rooms = JSON.parse(localStorage.getItem("rooms"));
+    const roomIndex = rooms.findIndex(room => room.roomNumber == roomID);
+    rooms[roomIndex].booked = !rooms[roomIndex].booked;
+    localStorage.setItem("rooms", JSON.stringify(rooms));
+    resolve(rooms[roomIndex]);
+});
+
 export default {
     fetchAll,
-    getById
+    getById,
+    update,
+    bookRoom
 };
