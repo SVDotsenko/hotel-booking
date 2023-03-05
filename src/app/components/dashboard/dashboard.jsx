@@ -17,11 +17,16 @@ const Dashboard = () => {
         }
     }, [book]);
 
+    const getPageTitle = () => {
+        const booking = book.charAt(0).toUpperCase() + book.slice(1);
+        return rooms?.length > 0 ? `${booking} rooms` : `There is no any ${book} rooms`;
+    }
+
     return rooms ? <>
-        <h2 className="mt-1">{book.charAt(0).toUpperCase() + book.slice(1)} rooms</h2>
+        <h2 className="mt-1">{getPageTitle()} </h2>
         <div className="dashboard">
-            <div className="rooms-container mt-3">
-                {rooms.map(room =>
+            <div className="rooms-container mt-1">
+                {rooms?.map(room =>
                     <Room key={room._id}
                           {...room}
                           rooms={rooms}
