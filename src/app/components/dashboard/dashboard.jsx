@@ -22,7 +22,11 @@ const Dashboard = () => {
         <div className="dashboard">
             <div className="rooms-container mt-3">
                 {rooms.map(room =>
-                    <Room key={room._id} {...room}/>
+                    <Room key={room._id}
+                          {...room}
+                          rooms={rooms}
+                          setRooms={setRooms}
+                    />
                 )}
             </div>
         </div>
