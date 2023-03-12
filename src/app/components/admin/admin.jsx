@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./admin.css";
 import api from "../../api";
+import Spinner from "../spinner";
 
 const Admin = () => {
     const [rooms, setRooms] = useState();
@@ -18,27 +19,24 @@ const Admin = () => {
     }
 
     return rooms ? <>
-        <div className="caption">
-            <h1>room status</h1>
-        </div>
+        <h1 className="text-center mt-5">Rooms status</h1>
         <div className="container">
             <div className="inner-container"
                  data-toggle="tooltip"
                  title="click the room to change booking status">
                 {rooms?.map(room =>
-                    <div
-                        key={room._id}
-                        className={getRoomStyle(room)}
-                        data-toggle="tooltip"
-                        title={room.name}
-                        onClick={() => handleClick(room)}
+                    <div key={room._id}
+                         className={getRoomStyle(room)}
+                         data-toggle="tooltip"
+                         title={room.name}
+                         onClick={() => handleClick(room)}
                     >
                         {room.roomNumber}
                     </div>
                 )}
             </div>
         </div>
-    </> : <h1> Loading rooms...</h1>;
+    </> : <Spinner/>;
 }
 
 export default Admin;

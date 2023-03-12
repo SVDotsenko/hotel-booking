@@ -20,7 +20,7 @@ const NavBar = () => {
                     <Link to="/rooms/booked" className="nav-link">Booked rooms</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/entrance" className="nav-link">Entrance</Link>
+                    <Link to="/" className="nav-link">Entrance</Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/registration" className="nav-link">Registration</Link>

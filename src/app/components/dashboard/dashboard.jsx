@@ -3,6 +3,7 @@ import "./dashboard.css"
 import Room from "../room/room";
 import api from "../../api";
 import {useParams} from "react-router-dom";
+import Spinner from "../spinner";
 
 const Dashboard = () => {
     const {book} = useParams();
@@ -23,7 +24,7 @@ const Dashboard = () => {
     }
 
     return rooms ? <>
-        <h2 className="mt-1">{getPageTitle()} </h2>
+        <h2 className="text-center mt-1">{getPageTitle()} </h2>
         <div className="dashboard">
             <div className="rooms-container mt-1">
                 {rooms?.map(room =>
@@ -35,7 +36,7 @@ const Dashboard = () => {
                 )}
             </div>
         </div>
-    </> : <h1>loading...</h1>;
+    </> : <Spinner/>;
 }
 
 export default Dashboard;

@@ -89,19 +89,17 @@ if (!localStorage.getItem("rooms")) {
     localStorage.setItem("rooms", JSON.stringify(rooms));
 }
 
-const fetchAll = () =>
-    new Promise((resolve) => {
-        window.setTimeout(function () {
-            resolve(JSON.parse(localStorage.getItem("rooms")));
-        }, 1000);
-    });
+const fetchAll = () => new Promise(resolve => {
+    setTimeout(function () {
+        resolve(JSON.parse(localStorage.getItem("rooms")));
+    }, 1000);
+});
 
-const getById = id =>
-    new Promise(resolve => {
-        window.setTimeout(function () {
-            resolve(JSON.parse(localStorage.getItem("rooms")).find(room => room.roomNumber == id));
-        }, 500);
-    });
+const getById = id => new Promise(resolve => {
+    setTimeout(function () {
+        resolve(JSON.parse(localStorage.getItem("rooms")).find(room => room.roomNumber == id));
+    }, 500);
+});
 
 const update = (id, data) => new Promise(resolve => {
     const rooms = JSON.parse(localStorage.getItem("rooms"));
@@ -112,11 +110,13 @@ const update = (id, data) => new Promise(resolve => {
 });
 
 const bookRoom = roomID => new Promise(resolve => {
-    const rooms = JSON.parse(localStorage.getItem("rooms"));
-    const roomIndex = rooms.findIndex(room => room.roomNumber == roomID);
-    rooms[roomIndex].booked = !rooms[roomIndex].booked;
-    localStorage.setItem("rooms", JSON.stringify(rooms));
-    resolve(rooms[roomIndex]);
+    setTimeout(() => {
+        const rooms = JSON.parse(localStorage.getItem("rooms"));
+        const roomIndex = rooms.findIndex(room => room.roomNumber == roomID);
+        rooms[roomIndex].booked = !rooms[roomIndex].booked;
+        localStorage.setItem("rooms", JSON.stringify(rooms));
+        resolve(rooms[roomIndex]);
+    }, 100);
 });
 
 export default {
